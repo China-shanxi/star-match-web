@@ -2,6 +2,8 @@ const name1 = document.getElementById('name1');
 const name2 = document.getElementById('name2');
 const getMatchBtn = document.getElementById('getMatchBtn');
 const matchResult = document.getElementById('matchResult');
+const shareMatchBtn = document.getElementById("shareMatchBtn");
+let currentMatchText = "";
 
 // 缘分解析库
 const matchDesc = [
@@ -17,7 +19,6 @@ const matchDesc = [
 // 计算缘分分数
 function calcScore(n1, n2) {
     let total = 0;
-    // 姓名汉字笔画简易算法
     for(let s of n1) total += s.charCodeAt(0);
     for(let s of n2) total += s.charCodeAt(0);
     let score = total % 100;
@@ -41,9 +42,31 @@ getMatchBtn.addEventListener('click', () => {
     }
     let score = calcScore(n1, n2);
     let desc = getDesc(score);
+    currentMatchText = `💞 ${n1} & ${n2} 缘分测算结果 💞
+缘分匹配度：${score}分 / 100分
+缘分解析：${desc}`;
     matchResult.innerHTML = `
         <h3>💞 ${n1} & ${n2} 缘分测算结果 💞</h3>
         <p style="font-size:24px;color:#7b3fd8;font-weight:bold">缘分匹配度：${score}分 / 100分</p>
         <p><strong>缘分解析：</strong>${desc}</p>
     `;
+    // 保存到本地记录
+    addRecord({
+        type: "match",
+        content: `${n1} & ${n2} 姓名配对测算`
+    })
+})
+
+// 配对结果分享
+shareMatchBtn.addEventListener("click", async ()=>{
+    if(!currentMatchText) {
+        alert("请先测算缘分后再分享！");
+        return;
+    }
+    try {
+        await navigator.clipboard.writeText(currentMatchText);
+        alert("配对结果已复制剪贴板，直接粘贴分享！");
+    } catch {
+        alert("复制失败，请手动复制页面文字分享");
+    }
 })
