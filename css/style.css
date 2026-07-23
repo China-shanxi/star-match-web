@@ -5,17 +5,39 @@
     font-family: "Microsoft YaHei", sans-serif;
 }
 body {
-    background: linear-gradient(135deg, #2c1654, #432177);
     min-height: 100vh;
     padding: 40px 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+/* 星空背景动画 */
+.star-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0b0626;
+    z-index: -1;
+}
+.star-dot {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    animation: twinkle 3s infinite ease-in-out;
+}
+@keyframes twinkle {
+    0% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0.2; transform: scale(0.8); }
 }
 .container {
     max-width: 600px;
     margin: 0 auto;
-    background: #fff;
+    background: rgba(255,255,255,0.95);
     border-radius: 16px;
     padding: 30px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    box-shadow: 0 0 30px rgba(123, 63, 216, 0.3);
 }
 h1 {
     text-align: center;
@@ -33,7 +55,7 @@ h1 {
     padding: 12px;
     border: none;
     background: transparent;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
     color: #666;
 }
@@ -64,6 +86,17 @@ input, select {
     border-radius: 8px;
     font-size: 15px;
 }
+/* 星座图标 */
+.star-icon-box {
+    text-align: center;
+    margin-top:10px;
+    min-height:80px;
+}
+#starIcon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
 .btn {
     width: 100%;
     padding: 14px;
@@ -74,9 +107,22 @@ input, select {
     font-size: 17px;
     cursor: pointer;
     transition: 0.3s;
+    margin-top:10px;
 }
 .btn:hover {
     background: #602fb9;
+}
+.share-btn {
+    background: #32b881;
+}
+.share-btn:hover {
+    background: #27996a;
+}
+.clear-record-btn {
+    background: #dd4444;
+}
+.clear-record-btn:hover {
+    background: #bb3333;
 }
 .result-box {
     margin-top: 20px;
@@ -85,4 +131,19 @@ input, select {
     border-radius: 10px;
     line-height: 1.8;
     color: #333;
+}
+/* 历史记录样式 */
+#recordList {
+    min-height:100px;
+    margin:20px 0;
+}
+.record-item {
+    padding:15px;
+    background:#f0ecfb;
+    border-radius:8px;
+    margin-bottom:12px;
+}
+.record-time {
+    font-size:13px;
+    color:#888;
 }
