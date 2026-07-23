@@ -1,17 +1,18 @@
 // 星座映射：英文标识、日期范围、图标链接
-const starMap = {
-    aries: { name: "白羊座", start: [3,21], end: [4,19], icon:"https://img0.baidu.com/it/u=3932456780,3017864211&fm=253&fmt=auto&app=138&f=PNG?w=80&h=80" },
-    taurus: { name: "金牛座", start: [4,20], end: [5,20], icon:"https://img2.baidu.com/it/u=1986542310,3388712402&fm=253&fmt=auto&app=138&f=PNG?w=80&h=80" },
-    gemini: { name: "双子座", start: [5,21], end: [6,21], icon:"https://img0.baidu.com/it/u=3288764330,3882311102&fm=253&fmt=auto&app=138&f=PNG?w=80&h=80" },
-    cancer: { name: "巨蟹座", start: [6,22], end: [7,22], icon:"https://img2.baidu.com/it/u=2233114444,3111244400&fm=253&fmt=auto&app=138&f=PNG?w=80&h=80" },
-    leo: { name: "狮子座", start: [7,23], end: [8,22], icon:"https://img0.baidu.com/it/u=3882211100,3222444111&fm=253&fmt=auto&app=138&f=PNG?w=80&h=80" },
-    virgo: { name: "处女座", start: [8,23], end: [9,22], icon:"https://img0.baidu.com/it/u=2233114444,3111244400&fm=253&fmt=auto&app=138&f=PNG?w=80&h=80" },
-    libra: { name: "天秤座", start: [9,23], end: [10,23], icon:"https://img0.baidu.com/it/u=3288764330,3882311102&fm=253&fmt=auto&app=138&f=PNG?w=80&h=80" },
-    scorpio: { name: "天蝎座", start: [10,24], end: [11,22], icon:"https://img0.baidu.com/it/u=3932456780,3017864211&fm=253&fmt=auto&app=138&f=PNG?w=80&h=80" },
-    sagittarius: { name: "射手座", start: [11,23], end: [12,21], icon:"https://img0.baidu.com/it/u=1986542310,3388712402&fm=253&fmt=auto&app=138&f=PNG?w=80&h=80" },
-    capricorn: { name: "摩羯座", start: [12,22], end: [1,19], icon:"https://img0.baidu.com/it/u=2233114444,3111244400&fm=253&fmt=auto&app=138&f=PNG?w=80&h=80" },
-    aquarius: { name: "水瓶座", start: [1,20], end: [2,18], icon:"https://img0.baidu.com/it/u=3882211100,3222444111&fm=253&fmt=auto&app=138&f=PNG?w=80&h=80" },
-    pisces: { name: "双鱼座", start: [2,19], end: [3,20], icon:"https://img0.baidu.com/it/u=3288764330,3882311102&fm=253&fmt=auto&app=138&f=PNG?w=80&h=80" }
+// 稳定CDN星座图标映射（80×80，透明背景，无破图）
+const starMap={
+    aries: { name: "白羊座", start: [3,21], end: [4,19], icon: "https://cdn.jsdelivr.net/npm/zodiac-icons@1.0.0/aries.png" },
+    taurus: { name: "金牛座", start: [4,20], end: [5,20], icon: "https://cdn.jsdelivr.net/npm/zodiac-icons@1.0.0/taurus.png" },
+    gemini: { name: "双子座", start: [5,21], end: [6,21], icon: "https://cdn.jsdelivr.net/npm/zodiac-icons@1.0.0/gemini.png" },
+    cancer: { name: "巨蟹座", start: [6,22], end: [7,22], icon: "https://cdn.jsdelivr.net/npm/zodiac-icons@1.0.0/cancer.png" },
+    leo: { name: "狮子座", start: [7,23], end: [8,22], icon: "https://cdn.jsdelivr.net/npm/zodiac-icons@1.0.0/leo.png" },
+    virgo: { name: "处女座", start: [8,23], end: [9,22], icon: "https://cdn.jsdelivr.net/npm/zodiac-icons@1.0.0/virgo.png" },
+    libra: { name: "天秤座", start: [9,23], end: [10,23], icon: "https://cdn.jsdelivr.net/npm/zodiac-icons@1.0.0/libra.png" },
+    scorpio: { name: "天蝎座", start: [10,24], end: [11,22], icon: "https://cdn.jsdelivr.net/npm/zodiac-icons@1.0.0/scorpio.png" },
+    sagittarius: { name: "射手座", start: [11,23], end: [12,21], icon: "https://cdn.jsdelivr.net/npm/zodiac-icons@1.0.0/sagittarius.png" },
+    capricorn: { name: "摩羯座", start: [12,22], end: [1,19], icon: "https://cdn.jsdelivr.net/npm/zodiac-icons@1.0.0/capricorn.png" },
+    aquarius: { name: "水瓶座", start: [1,20], end: [2,18], icon: "https://cdn.jsdelivr.net/npm/zodiac-icons@1.0.0/aquarius.png" },
+    pisces: { name: "双鱼座", start: [2,19], end: [3,20], icon: "https://cdn.jsdelivr.net/npm/zodiac-icons@1.0.0/pisces.png" }
 };
 
 const starSelect = document.getElementById('starSelect');
