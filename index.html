@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星座运势 | 姓名配对缘分测算</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✨ 星座缘分测算馆 ✨</h1>
+        <div class="tab-box">
+            <button class="tab active" data-tab="star">星座每日运势</button>
+            <button class="tab" data-tab="match">姓名缘分配对</button>
+        </div>
+
+        <!-- 星座运势模块 -->
+        <div class="content star-content show">
+            <div class="form-item">
+                <label>选择你的星座：</label>
+                <select id="starSelect">
+                    <option value="">请选择星座</option>
+                    <option value="白羊">白羊座 3.21-4.19</option>
+                    <option value="金牛">金牛座 4.20-5.20</option>
+                    <option value="双子">双子座 5.21-6.21</option>
+                    <option value="巨蟹">巨蟹座 6.22-7.22</option>
+                    <option value="狮子">狮子座 7.23-8.22</option>
+                    <option value="处女">处女座 8.23-9.22</option>
+                    <option value="天秤">天秤座 9.23-10.23</option>
+                    <option value="天蝎">天蝎座 10.24-11.22</option>
+                    <option value="射手">射手座 11.23-12.21</option>
+                    <option value="摩羯">摩羯座 12.22-1.19</option>
+                    <option value="水瓶">水瓶座 1.20-2.18</option>
+                    <option value="双鱼">双鱼座 2.19-3.20</option>
+                </select>
+            </div>
+            <button class="btn" id="getStarBtn">查询今日运势</button>
+            <div class="result-box" id="starResult"></div>
+        </div>
+
+        <!-- 姓名配对模块 -->
+        <div class="content match-content">
+            <div class="form-item">
+                <label>你的姓名：</label>
+                <input type="text" id="name1" placeholder="输入姓名">
+            </div>
+            <div class="form-item">
+                <label>对方姓名：</label>
+                <input type="text" id="name2" placeholder="输入姓名">
+            </div>
+            <button class="btn" id="getMatchBtn">测算缘分</button>
+            <div class="result-box" id="matchResult"></div>
+        </div>
+    </div>
+
+    <script src="./js/star.js"></script>
+    <script src="./js/match.js"></script>
+    <script>
+        // 切换标签页
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const type = tab.dataset.tab;
+                document.querySelectorAll('.content').forEach(c => c.classList.remove('show'));
+                if(type === 'star') document.querySelector('.star-content').classList.add('show');
+                if(type === 'match') document.querySelector('.match-content').classList.add('show');
+            })
+        })
+    </script>
+</body>
+</html>
